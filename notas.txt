@@ -1,0 +1,16 @@
+crear un proyecto react dentro de laravel 
+    npm create vite
+    cd [nombre del proyecto]
+    npm install
+    npm run dev
+
+agregar el router al proyecto react
+    npm install react-router-dom -S
+
+para hacer peticiones al backend se usara axios
+    cd [nombre del proyecto]
+    npm install -S axios
+
+instalar scss en el proyecto
+    npm install node-sass --save-dev
+    npm install -D sass

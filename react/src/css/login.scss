@@ -1,0 +1,46 @@
+@import 'variables.scss';
+@import 'animations.scss';
+@import 'components.scss';
+
+
+.login-container{
+    //background-color: $backgrodund-color;
+    background-image: linear-gradient(to bottom, #73b16a, $detail-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .card{
+        @include animated;
+        @include fadeInDown;
+        background-color: $card-color;
+        width: 300px;
+        border-radius: 15px;
+        border: solid 1px $border-color;
+        padding: 30px 40px 30px 40px;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .title{
+        width: 100%;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .image-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 40px;
+
+        img{
+            width: 120px;
+        }
+    }
+
+}

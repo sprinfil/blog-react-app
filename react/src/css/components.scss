@@ -1,0 +1,30 @@
+label{
+    font-size: 15px;
+    font-weight: 400;
+}
+input{
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+    padding: 12px 10px 12px 10px;
+    border-radius: 10px;
+    border: solid 1px $border-color;
+    transition: 0.3s ease-out;
+}
+
+input:hover{
+    border-color: $detail-color;
+}
+
+input:focus{
+    outline: 1px solid $detail-color;
+}
+
+button{
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    background-color: $detail-color;
+    color: white;
+    outline: 1px solid $detail-color;
+    border: none;
+}
