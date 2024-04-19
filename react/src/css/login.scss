@@ -29,6 +29,7 @@
         font-size: 25px;
         font-weight: 500;
         margin-bottom: 20px;
+        color: $detail-color;
     }
 
     .image-container{
@@ -41,6 +42,15 @@
         img{
             width: 120px;
         }
+    }
+
+    .signup-label{
+        margin-top: 13px;
+        font-size: 12px;
+        text-align: right;
+        color: $detail-color;
+        cursor: pointer;
+        text-decoration: underline;
     }
 
 }

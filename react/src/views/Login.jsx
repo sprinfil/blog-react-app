@@ -1,7 +1,15 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import logoImage from '../img/sapa_logo.png';
 
 const login = () => {
+
+
+  const onSubmit = (e) =>{
+    e.preventDefault();
+    console.log("iniciar sesion");
+  }
+
   return (
     <div className='login-container'>
 
@@ -16,7 +24,7 @@ const login = () => {
         </div>
 
 
-        <form>
+        <form onSubmit={onSubmit}>
           <label>Usuario</label>
           <input type="text" placeholder='Ususario' />
           <br />
@@ -27,7 +35,7 @@ const login = () => {
           <br />
           <button>Ingresar</button>
         </form>
-
+        <Link to="/signup"><p className="signup-label">no tienes cuenta? registrate</p></Link>
       </div>  
 
     </div>
