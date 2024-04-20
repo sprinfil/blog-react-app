@@ -17,7 +17,7 @@ class AuthController extends Controller
         if(!Auth::attempt($credentials)){
             return response([
                 "message" => "tus credenciales no son correctas",
-            ]);
+            ], 422);
         }
 
         $user = Auth::user();

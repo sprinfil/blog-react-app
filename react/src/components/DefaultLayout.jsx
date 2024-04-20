@@ -10,9 +10,10 @@ const DefaultLayout = () => {
         return <Navigate to="login"/>
     }
 
-
   return (
-    <div>DefaultLayout</div>
+    <div>DefaultLayout
+      <Outlet/>
+    </div>
   )
 }
 

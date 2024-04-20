@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import logoImage from '../img/sapa_logo.png';
 import { Link } from "react-router-dom";
 import { useStateContext } from '../contexts/ContextProvider.jsx';
@@ -12,9 +12,12 @@ const SignUp = () => {
   const password_confirmationRef = useRef();
   const emailRef = useRef();
   const {setUser, setToken} = useStateContext();
+  const [errors, setErrors] = useState(null);
+  const [loading, setLoading] = useState(false);
 
 
   const onSubmit = (e) => {
+    setErrors(null);
     e.preventDefault();
     const payload = {
       name: nameRef.current.value,
@@ -23,16 +26,19 @@ const SignUp = () => {
       email: emailRef.current.value,
     }
     console.log(payload);
-
+    setLoading(true);
     axiosClient.post("/signup", payload)
+
     .then(({data})=>{
       setUser(data.user);
       setToken(data.token);
+      setLoading(false);
     })
     .catch(err =>{
+      setLoading(false);
       const response = err.response;
       if(response && response.status === 422){
-        console.log(response.data.errors);
+        setErrors(response.data.errors);
       }
     })
   }
@@ -49,6 +55,19 @@ const SignUp = () => {
         <div className='title'>
           Registrarse
         </div>
+        {loading &&
+        <div className='loader-container'>        
+        <div className='loader'></div>
+        </div>
+
+      }
+      {errors && 
+      <div className='alert'>
+        {Object.keys(errors).map(key => (
+          <p key={key}>{errors[key][0]}</p>
+        ))}
+      </div>
+      }
 
 
         <form onSubmit={onSubmit}>

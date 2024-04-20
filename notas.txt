@@ -14,3 +14,8 @@ para hacer peticiones al backend se usara axios
 instalar scss en el proyecto
     npm install node-sass --save-dev
     npm install -D sass
+
+cambiar de idioma laravel 
+    composer require --dev laravel-lang/common
+    php artisan lang:add es
+    php artisan lang update
