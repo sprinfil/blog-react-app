@@ -31,6 +31,7 @@
         .user-card{
             @include animated;
             @include fade;
+            z-index: 100;
             background-color: $detail-color;
             position: fixed;
             display: flex;
