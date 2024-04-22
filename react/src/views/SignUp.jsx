@@ -3,6 +3,7 @@ import logoImage from '../img/sapa_logo.png';
 import { Link } from "react-router-dom";
 import { useStateContext } from '../contexts/ContextProvider.jsx';
 import axiosClient from '../axios-client';
+import Loader from "../components/Loader.jsx";
 
 
 const SignUp = () => {
@@ -56,9 +57,7 @@ const SignUp = () => {
           Registrarse
         </div>
         {loading &&
-        <div className='loader-container'>        
-        <div className='loader'></div>
-        </div>
+       <Loader/>
 
       }
       {errors && 

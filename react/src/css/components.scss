@@ -46,7 +46,6 @@ input:focus{
     @include btn;
     background-color: $detail-color;
     color: white;
-    outline: 1px solid $detail-color;
 }
 .btn-menu{
     @include btn;
