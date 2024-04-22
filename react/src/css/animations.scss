@@ -1,6 +1,6 @@
 @mixin animated {
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -8,6 +8,11 @@
 @mixin fadeInDown {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
+}
+
+@mixin fade {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fade;
 }
 
 @keyframes fadeInDown {
@@ -18,5 +23,14 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 50px;
     }
 }

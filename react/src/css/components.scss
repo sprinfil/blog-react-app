@@ -24,14 +24,33 @@ input:focus{
 }
 
 /*botones*/
-button{
+@mixin btn{
     padding: 10px 10px 10px 10px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-auth{
+    @include btn;
     background-color: $detail-color;
     color: white;
     outline: 1px solid $detail-color;
-    border: none;
-    cursor: pointer;
+}
+.btn-menu{
+    @include btn;
+    display: flex;
+    color:$font-color;
+    gap: 10px;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+.btn-menu:hover{
+    background-color: $background-color;
+}
+.btn-menu-selected{
+    background-color: $background-color;
 }
 
 /*alertas*/
@@ -39,8 +58,66 @@ button{
     @include animated;
     @include fadeInDown;
     background-color: #ff2121;
-    padding: 10px 10px 10px 10px;
+    padding: 20px 10px 20px 10px;
     margin: 20px 0px 20px 0px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: rgb(241, 241, 241);
+}
+
+/*vistas*/
+.view-container{
+    padding: 20px 20px 20px 20px;
+
+    .card{
+        padding: 20px 20px 20px 20px;
+        background-color: $card-color;
+        width: fit-content;
+        border-radius: 10px;
+        border: solid 1px $border-color;
+        display: flex;
+    }
+    .dashboard-card{
+        padding: 20px 20px 20px 20px;
+        background-color: $card-color;
+        width: fit-content;
+        border-radius: 10px;
+        border: solid 1px $border-color;
+        display: flex;
+        gap: 20px;
+        .first{
+            display: flex;
+            align-items: center;
+        }
+        .second{
+            p{
+                margin-right: 100px;
+            }
+            .primer-parrafo{
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+        .third{
+            display: flex;
+            align-items: center;
+            div{
+                padding: 5px 20px 5px 20px;
+                background-color: $card-color;
+                border: solid 1px $border-color;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            div:hover{
+                background-color: $background-color;
+            }
+        }
+    }
+}
+
+/*PARRAFOS*/
+.title{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }

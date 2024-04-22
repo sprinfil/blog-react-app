@@ -1,15 +1,20 @@
 //FUENTES
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 //COLORES
-$backgrodund-color: #F7F8FB;
+$background-color: #F7F8FB;
 $card-color: #FFFFFF;
-$border-color: #e7e7e7;
+$border-color: #ebebeb;
 $detail-color: #417B64;
+$detail-color-hover: #3d745e;
+$header-font: #F7F8FB;
+$font-color: #646464;
 
 //AJUSTES GENERALES
 *{
     margin: 0px;
     padding: 0px;
-    font-family: "Roboto", sans-serif;
+    //font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
 }

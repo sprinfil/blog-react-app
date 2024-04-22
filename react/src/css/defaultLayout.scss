@@ -1,0 +1,15 @@
+@import 'variables.scss';
+@import 'animations.scss';
+@import 'components.scss';
+
+.defaultLayout-container{
+    background-color: $background-color;
+    height: 100vh;
+    display: flex;
+    overflow: auto;
+
+    main{
+        width: 100%;
+        overflow: auto;
+    }
+}

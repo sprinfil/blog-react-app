@@ -19,3 +19,10 @@ cambiar de idioma laravel
     composer require --dev laravel-lang/common
     php artisan lang:add es
     php artisan lang update
+
+instalar iconos para react 
+    npm i --save @fortawesome/fontawesome-svg-core  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons        
+    agregar esos imports
+    import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+    import {faBars} from "@fortawesome/free-solid-svg-icons";   
+    <FontAwesomeIcon icon={faBars}/>                                          

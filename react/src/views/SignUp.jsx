@@ -91,7 +91,7 @@ const SignUp = () => {
             <br />
             <br />
           </div>
-          <button>Registrarse</button>
+          <button className='btn-auth'>Registrarse</button>
         </form>
 
 

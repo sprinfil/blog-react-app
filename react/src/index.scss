@@ -1,2 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import 'css/auth.scss';
 @import 'css/loader.scss';
+@import 'css/defaultLayout.scss';
+@import 'css/menu.scss';
+@import 'css/header.scss';

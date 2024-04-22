@@ -83,7 +83,7 @@ const onSubmit = (e) => {
           <input ref={passwordRef} type="password" placeholder='Contraseña'/>
           <br />
           <br />
-          <button>Ingresar</button>
+          <button className='btn-auth'>Ingresar</button>
         </form>
         <Link to="/signup"><p className="signup-label">no tienes cuenta? registrate</p></Link>
       </div>  
