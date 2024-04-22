@@ -76,11 +76,11 @@ const onSubmit = (e) => {
 
         <form onSubmit={onSubmit}>
           <label>Usuario</label>
-          <input ref={nameRef} type="text" placeholder='Ususario' />
+          <input ref={nameRef} type="text" placeholder='Ususario' className='w-full'/>
           <br />
           <br />
           <label>Contraseña</label>
-          <input ref={passwordRef} type="password" placeholder='Contraseña'/>
+          <input ref={passwordRef} type="password" placeholder='Contraseña' className='w-full'/>
           <br />
           <br />
           <button className='btn-auth'>Ingresar</button>

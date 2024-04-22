@@ -74,19 +74,19 @@ const SignUp = () => {
           <div className='form-container'>
             <div>
               <label>Usuario</label>
-              <input type="text" placeholder='Ususario' ref={nameRef}/>
+              <input type="text" placeholder='Ususario' ref={nameRef} className='w-full'/>
               <br />
               <br />
               <label>Contraseña</label>
-              <input type="password" placeholder='Contraseña' ref={passwordRef}/>
+              <input type="password" placeholder='Contraseña' ref={passwordRef} className='w-full'/>
               <br />
               <br />
               <label>Repetir Contraseña</label>
-              <input type="password" placeholder='Contraseña' ref={password_confirmationRef}/>
+              <input type="password" placeholder='Contraseña' ref={password_confirmationRef} className='w-full'/>
             </div>
             <div>
               <label>Correo electronico</label>
-              <input type="text" placeholder='correo electronico' ref={emailRef}/>
+              <input type="text" placeholder='correo electronico' ref={emailRef} className='w-full'/>
             </div>
             <br />
             <br />

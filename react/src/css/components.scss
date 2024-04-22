@@ -7,7 +7,6 @@ label{
     color: $detail-color;
 }
 input{
-    width: 100%;
     margin: 5px 0px 5px 0px;
     padding: 12px 10px 12px 10px;
     border-radius: 5px;
@@ -29,6 +28,18 @@ input:focus{
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+
+.btn-primary{
+    @include btn;
+    background-color: $card-color;
+    color: white;
+    outline: 1px solid $border-color;
+    color: $font-color ;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover{
+    background-color: $background-color;
 }
 
 .btn-auth{
@@ -69,13 +80,17 @@ input:focus{
     padding: 20px 20px 20px 20px;
 
     .card{
-        padding: 20px 20px 20px 20px;
         background-color: $card-color;
-        width: fit-content;
         border-radius: 10px;
         border: solid 1px $border-color;
-        display: flex;
     }
+
+    .table-container{
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    //dashboard
     .dashboard-card{
         padding: 20px 20px 20px 20px;
         background-color: $card-color;
@@ -113,6 +128,7 @@ input:focus{
             }
         }
     }
+
 }
 
 /*PARRAFOS*/
@@ -120,4 +136,29 @@ input:focus{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 20px;
+}
+
+/*TABLA*/
+table{
+    background-color: $card-color;
+    width: 100%;
+    thead{
+        background-color: $background-color;
+        border: solid 1px $border-color;
+    }
+    th{
+        text-align: left;
+        padding: 10px 10px 10px 10px;
+    }
+    tr{
+        border: solid 1px $border-color;
+        td{
+            padding: 10px 10px 10px 10px;
+        }
+    }
+    td{
+        button{
+            margin: 10px 10px 10px 10px;
+        }
+    }
 }
