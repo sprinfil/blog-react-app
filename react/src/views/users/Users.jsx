@@ -1,0 +1,105 @@
+import React, { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faTrash, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import axiosClient from "../../axios-client.js";
+import Loader from "../../components/Loader.jsx";
+import { Link } from 'react-router-dom';
+
+const Users = () => {
+
+  const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    getUsers();
+  }, [])
+
+  const getUsers = () => {
+    setLoading(true);
+    axiosClient.get("/users")
+      .then(({ data }) => {
+        setLoading(false);
+        setUsers(data.data);
+        console.log(users);
+      })
+      .catch(() => {
+        setLoading(false);
+      })
+  }
+
+  const onDelete = (user) => {
+    if (!window.confirm("Eliminar este usuario?")) {
+      return;
+    }
+    axiosClient.delete(`/users/${user.id}`)
+      .then(() => {
+        //notification
+        getUsers();
+      })
+  }
+
+  return (
+    <div>
+      <div className='px-[20px] py-[20px]'>
+        <Link to={"/users"}>Listado</Link>
+      </div>
+
+      <div className='view-container'>
+
+        <p className='title'>Usuarios</p>
+        <div className='w-full flex justify-end my-3'>
+          <Link to="/users/create">
+            <button className='btn-auth'>Crear</button>
+          </Link>
+        </div>
+        <div className='card w-full'>
+          <div className='w-full flex items-center justify-end h-full my-2 px-5 gap-2'>
+            <input type="text" placeholder='buscar...' />
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </div>
+
+          <div className='table-container'>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {loading &&
+                  <tr><td colSpan={4}><Loader /></td></tr>
+                }
+                {
+                  users.map((user, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>
+                          {user.name}
+                        </td>
+                        <td>
+                          {user.email}
+                        </td>
+                        <td>
+                          <Link to={'/users/'+user.id}><button className='btn-auth'> <FontAwesomeIcon icon={faEye} /></button></Link>
+                          <button className='btn-auth' onClick={ev => onDelete(user)}><FontAwesomeIcon icon={faTrash} /></button>
+                        </td>
+                      </tr>
+                    )
+                  })
+                }
+              </tbody>
+
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  )
+}
+
+export default Users

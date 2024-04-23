@@ -34,7 +34,7 @@ const Header = () => {
         <div className='header-container'>
             <div className='header-content'>
 
-                <div className='user-container' onClick={clickUserContainer}>
+                <div className='user-container z-10' onClick={clickUserContainer}>
                     <p>{user.name}</p>
                     <FontAwesomeIcon icon={faUser} />
                     {userCard &&

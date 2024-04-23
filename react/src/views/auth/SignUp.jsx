@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react'
-import logoImage from '../img/sapa_logo.png';
+import logoImage from '../../img/sapa_logo.png';
 import { Link } from "react-router-dom";
-import { useStateContext } from '../contexts/ContextProvider.jsx';
-import axiosClient from '../axios-client';
-import Loader from "../components/Loader.jsx";
+import { useStateContext } from '../../contexts/ContextProvider.jsx';
+import axiosClient from '../../axios-client.js';
+import Loader from "../../components/Loader.jsx";
 
 
 const SignUp = () => {

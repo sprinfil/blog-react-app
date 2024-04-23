@@ -76,17 +76,21 @@ input:focus{
 
 /*vistas*/
 .view-container{
+    @include animated;
+    @include fadeInDown;
     padding: 20px 20px 20px 20px;
 
     .card{
         background-color: $card-color;
-        border-radius: 10px;
+        border-radius: 5px;
+        //box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
         border: solid 1px $border-color;
     }
 
     .table-container{
         width: 100%;
         border-radius: 5px;
+        overflow: auto;
     }
 
     //dashboard
@@ -156,6 +160,7 @@ table{
         }
     }
     td{
+
         button{
             margin: 10px 10px 10px 10px;
         }

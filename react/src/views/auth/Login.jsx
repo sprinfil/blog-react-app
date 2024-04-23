@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { Link, Navigate } from "react-router-dom"
-import logoImage from '../img/sapa_logo.png';
-import axiosClient from '../axios-client';
-import { useStateContext } from '../contexts/ContextProvider';
-import Loader from "../components/Loader.jsx";
+import logoImage from '../../img/sapa_logo.png';
+import axiosClient from '../../axios-client.js';
+import { useStateContext } from '../../contexts/ContextProvider.jsx';
+import Loader from "../../components/Loader.jsx";
 
 const login = () => {
 
