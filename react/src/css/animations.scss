@@ -10,9 +10,12 @@
     animation-name: fadeInDown;
 }
 
-@mixin fade {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fade;
+.fadeIn {
+    animation: fadeIn 0.8s ;
+}
+
+.fadeOut {
+    animation: fadeOut 0.8s;
 }
 
 @keyframes fadeInDown {
@@ -26,11 +29,21 @@
     }
 }
 
-@keyframes fade {
+@keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: translateX(80px);
     }
     100% {
         opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
