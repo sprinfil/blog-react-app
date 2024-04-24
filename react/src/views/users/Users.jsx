@@ -9,9 +9,13 @@ const Users = () => {
 
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const [filter, setFilter] = useState();
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     getUsers();
+
+   
   }, [])
 
   const getUsers = () => {
@@ -20,6 +24,7 @@ const Users = () => {
       .then(({ data }) => {
         setLoading(false);
         setUsers(data.data);
+        setFilteredData(data.data);
         console.log(users);
       })
       .catch(() => {
@@ -38,6 +43,21 @@ const Users = () => {
       })
   }
 
+  const handleFilter = (e) =>{
+    setFilter(e.target.value);
+
+    if(filteredData.length > 0){
+      const a = users.filter(item =>
+        item.name.toLowerCase().trim().includes(filter.toLowerCase().trim()));
+      setFilteredData(a);
+    }else{
+      setFilteredData(users);
+    }
+
+  }
+
+
+
   return (
     <div>
       <div className='px-[20px] py-[20px]'>
@@ -54,7 +74,7 @@ const Users = () => {
         </div>
         <div className='card w-full'>
           <div className='w-full flex items-center justify-end h-full my-2 px-5 gap-2'>
-            <input type="text" placeholder='buscar...' />
+            <input type="text" placeholder='buscar...' onChange={handleFilter}/>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
 
@@ -73,7 +93,7 @@ const Users = () => {
                   <tr><td colSpan={4}><Loader /></td></tr>
                 }
                 {
-                  users.map((user, index) => {
+                  filteredData.map((user, index) => {
                     return (
                       <tr key={index}>
                         <td>
