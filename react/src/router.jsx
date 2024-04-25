@@ -7,6 +7,8 @@ import NotFound from './views/NotFound.jsx';
 import Dashboard from './views/Dashboard.jsx';
 import Users from './views/users/Users.jsx';
 import UsersCreate from './views/users/CreateUser.jsx';
+import Posts from './views/posts/Posts.jsx';
+import PostContainer from './views/posts/PostContainer.jsx';
 
 const router = createBrowserRouter ([
     {
@@ -21,6 +23,7 @@ const router = createBrowserRouter ([
                 path:'/dashboard',
                 element: <Dashboard/>
             },
+            //users
             {
                 path:'/users',
                 element: <Users/>
@@ -33,6 +36,11 @@ const router = createBrowserRouter ([
                 path:'/users/:id',
                 element: <UsersCreate key='userUpdate'/>
             },
+            //posts
+            {
+                path:'/posts',
+                element: <PostContainer/>,
+            }
         ]
     },
     {
