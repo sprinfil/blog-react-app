@@ -15,7 +15,7 @@ const Users = () => {
   useEffect(() => {
     getUsers();
 
-   
+
   }, [])
 
   const getUsers = () => {
@@ -43,14 +43,14 @@ const Users = () => {
       })
   }
 
-  const handleFilter = (e) =>{
+  const handleFilter = (e) => {
     setFilter(e.target.value);
 
-    if(filteredData.length > 0){
+    if (filteredData.length > 0) {
       const a = users.filter(item =>
         item.name.toLowerCase().trim().includes(filter.toLowerCase().trim()));
       setFilteredData(a);
-    }else{
+    } else {
       setFilteredData(users);
     }
 
@@ -74,7 +74,7 @@ const Users = () => {
         </div>
         <div className='card w-full'>
           <div className='w-full flex items-center justify-end h-full my-2 px-5 gap-2'>
-            <input type="text" placeholder='buscar...' onChange={handleFilter}/>
+            <input type="text" placeholder='buscar...' onChange={handleFilter} />
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
 
@@ -103,7 +103,7 @@ const Users = () => {
                           {user.email}
                         </td>
                         <td>
-                          <Link to={'/users/'+user.id}><button className='btn-auth'> <FontAwesomeIcon icon={faEye} /></button></Link>
+                          <Link to={'/users/' + user.id}><button className='btn-auth'> <FontAwesomeIcon icon={faEye} /></button></Link>
                           <button className='btn-auth' onClick={ev => onDelete(user)}><FontAwesomeIcon icon={faTrash} /></button>
                         </td>
                       </tr>
