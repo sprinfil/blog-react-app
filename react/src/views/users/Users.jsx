@@ -4,6 +4,7 @@ import { faEye, faTrash, faMagnifyingGlass } from "@fortawesome/free-solid-svg-i
 import axiosClient from "../../axios-client.js";
 import Loader from "../../components/Loader.jsx";
 import { Link } from 'react-router-dom';
+import DataTable from '../../components/data-components/DataTable.jsx';
 
 const Users = () => {
 
@@ -14,8 +15,6 @@ const Users = () => {
 
   useEffect(() => {
     getUsers();
-
-
   }, [])
 
   const getUsers = () => {
@@ -42,7 +41,6 @@ const Users = () => {
         getUsers();
       })
   }
-
   const handleFilter = (e) => {
     setFilter(e.target.value);
 
@@ -51,11 +49,10 @@ const Users = () => {
         item.name.toLowerCase().trim().includes(filter.toLowerCase().trim()));
       setFilteredData(a);
     } else {
-      setFilteredData(users);
+      setFilteredData(datas);
     }
 
   }
-
 
 
   return (
@@ -72,14 +69,13 @@ const Users = () => {
             <button className='btn-auth'>Crear</button>
           </Link>
         </div>
-        <div className='card w-full'>
+        <div className='card w-full table-container'>
           <div className='w-full flex items-center justify-end h-full my-2 px-5 gap-2'>
             <input type="text" placeholder='buscar...' onChange={handleFilter} />
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </div>
 
-          <div className='table-container'>
-
+          <div className=''>
             <table>
               <thead>
                 <tr>
@@ -116,6 +112,9 @@ const Users = () => {
 
           </div>
         </div>
+
+
+
       </div>
     </div>
 
